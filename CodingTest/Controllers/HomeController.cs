@@ -10,7 +10,8 @@ namespace CodingTest.Controllers
 	{
 		public ActionResult Index()
 		{
-			return View();
+			//return View();
+			return Redirect("/product/detail/something");
 		}
 
 		public ActionResult About()

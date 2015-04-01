@@ -5,9 +5,9 @@ namespace CodingTest.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<CodingTest.Models.ApplicationDbContext>
+    internal sealed class MigrationsConfig : DbMigrationsConfiguration<CodingTest.Models.Db>
     {
-        public Configuration()
+        public MigrationsConfig()
         {
             AutomaticMigrationsEnabled = true;
         }

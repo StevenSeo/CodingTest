@@ -16,6 +16,7 @@ namespace CodingTest.Controllers
 			Product product;
 			using(var db = new Db())
 			{
+				//var query = db.Database.SqlQuery<Product>("SQL...");
 				product = await db.Products.FirstOrDefaultAsync();
 			}
 			return View(product);

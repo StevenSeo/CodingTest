@@ -18,7 +18,7 @@ namespace CodingTest
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
-			//TaskHelper.RunBg(DbInit.InitData);
+			TaskHelper.RunBg(DbInit.InitData);
 		}
 	}
 }

@@ -13,12 +13,23 @@ namespace CodingTest.Controllers
 	{
 		public async Task<ViewResult> Detail(string id)
 		{
-			Product product;
+            Dictionary<string, Product> products = new Dictionary<string, Product>();
+
+			Product product = new Product();
+
 			using(var db = new Db())
 			{
 				//var query = db.Database.SqlQuery<Product>("SQL...");
-				product = await db.Products.FirstOrDefaultAsync();
+			//	product = await db.Products.FirstOrDefaultAsync();
+                products = await db.Products.ToDictionaryAsync(item => item.Id.ToString());
 			}
+
+            foreach (KeyValuePair<string, Product> entry in products)
+            {
+                if (entry.Key == id)
+                    product = entry.Value;
+            }
+
 			return View(product);
 		}
 	}
